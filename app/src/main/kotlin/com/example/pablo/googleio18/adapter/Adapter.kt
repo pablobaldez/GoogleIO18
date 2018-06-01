@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import com.example.pablo.googleio18.R
 import kotlinx.android.synthetic.main.vh_simple_item.view.*
 
-class Adapter(val onClick: () -> Unit) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(val onClick: (pos: Int) -> Unit) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
     private var data = ArrayList<String>()
 
@@ -21,7 +21,7 @@ class Adapter(val onClick: () -> Unit) : RecyclerView.Adapter<Adapter.ViewHolder
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.setOnClickListener {
-            onClick()
+            onClick(position)
         }
         holder.itemView.textView.text = data[position]
     }
