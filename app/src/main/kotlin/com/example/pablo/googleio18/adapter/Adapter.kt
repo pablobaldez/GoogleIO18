@@ -30,6 +30,11 @@ class Adapter(val onClick: (pos: Int) -> Unit) : RecyclerView.Adapter<Adapter.Vi
         data.add(item)
     }
 
+    fun setAndNotify(data: ArrayList<String>) {
+        this.data = data
+        notifyDataSetChanged()
+    }
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
 }

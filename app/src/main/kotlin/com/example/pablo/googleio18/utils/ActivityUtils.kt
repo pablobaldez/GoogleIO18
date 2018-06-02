@@ -2,6 +2,7 @@ package com.example.pablo.googleio18.utils
 
 import android.Manifest
 import android.app.Activity
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
@@ -28,4 +29,9 @@ fun Activity.doIfLocationIsAvailable(block: () -> Unit) {
     } else {
         requestLocationPermission()
     }
+}
+
+inline fun <reified T : Activity> Activity.startActivity() {
+    val intent = Intent(this, T::class.java)
+    startActivity(intent)
 }

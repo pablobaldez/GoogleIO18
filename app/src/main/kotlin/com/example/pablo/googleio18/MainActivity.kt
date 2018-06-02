@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import com.example.pablo.googleio18.adapter.Adapter
-import com.example.pablo.googleio18.sad.SampleActivity
+import com.example.pablo.googleio18.lifecycle.LifecycleAwareActivity
+import com.example.pablo.googleio18.livedata.ArchitectureActivity
+import com.example.pablo.googleio18.sad.SadActivity
 import com.example.pablo.googleio18.utils.BaseActivity
 import com.example.pablo.googleio18.utils.doIfLocationIsAvailable
+import com.example.pablo.googleio18.utils.startActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -33,10 +36,9 @@ class MainActivity : BaseActivity() {
     private fun onItemClicked(pos: Int) {
         doIfLocationIsAvailable {
             when (pos) {
-                0 -> SampleActivity.start(this)
-                1 -> com.example.pablo.googleio18.lifecycle.SampleActivity.start(this)
-                2 -> {
-                }
+                0 -> startActivity<SadActivity>()
+                1 -> startActivity<LifecycleAwareActivity>()
+                2 -> startActivity<ArchitectureActivity>()
             }
         }
     }

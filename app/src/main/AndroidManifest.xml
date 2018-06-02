@@ -18,11 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".sad.SampleActivity"
+        <activity android:name=".sad.SadActivity"
             android:label="Sad"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".lifecycle.SampleActivity"
-            android:label="LIfecycle-Aware"
+        <activity android:name=".lifecycle.LifecycleAwareActivity"
+            android:label="Lifecycle-Aware"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".livedata.ArchitectureActivity"
+            android:label="Architecture"
             android:parentActivityName=".MainActivity"/>
     </application>
 
